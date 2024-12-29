@@ -1,7 +1,7 @@
 #Set the following environment variables to the name and namespace where the Istio ingress gateway is located in your cluster:
 
-**$ export INGRESS_NAME=istio-ingressgateway
-$ export INGRESS_NS=istio-system**
+export INGRESS_NAME=istio-ingressgateway
+export INGRESS_NS=istio-system
 
 #Run the following command to determine if your Kubernetes cluster is in an environment that supports external load balancers:
 
@@ -18,7 +18,7 @@ istio-ingressgateway   LoadBalancer   172.21.109.129   130.211.10.121   ...     
 **export INGRESS_HOST=$(kubectl -n "$INGRESS_NS" get service "$INGRESS_NAME" -o jsonpath='{.status.loadBalancer.ingress[0].ip}')**
 
 # to get application URL
-export **GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT**
+**export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT**
 
 
 #Confirm the app is accessible from outside the cluster
